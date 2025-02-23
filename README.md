@@ -1,5 +1,68 @@
 ### Tutoriel : Introduction à l’interprétation du bytecode Lua pas à pas
 
+```
++-----------------------------------------------------------+
+|                Interpréteur de Bytecode Lua               |
++-----------------------------------------------------------+
+                            │
+                            ▼
++-----------------------------------------------------------+
+|               Chargement du Bytecode (binaire)            |
+|  - Vérification du Header                                 |
+|  - Décodage des instructions                              |
+|  - Initialisation des registres                           |
++-----------------------------------------------------------+
+                            │
+                            ▼
++-----------------------------------------------------------+
+|                    Registres Virtuels                     |
+|  [R0]  [R1]  [R2]  [R3]  ...  [Rn]                        |
+|  - Stockage des variables locales                         |
+|  - Manipulation des valeurs intermédiaires                |
++-----------------------------------------------------------+
+                            │
+                            ▼
++-----------------------------------------------------------+
+|                  Pile d’Exécution Lua                     |
+|  [Valeurs locales]  [Arguments]  [Résultats]              |
+|  - Gestion des appels de fonction                         |
+|  - Stockage temporaire des variables                      |
++-----------------------------------------------------------+
+                            │
+                            ▼
++-----------------------------------------------------------+
+|         Boucle d’Interprétation (Dispatch Loop)           |
+|  while (1):                                               |
+|    inst = mémoire[PC]    ← Charge l’instruction courante  |
+|    opcode = inst >> 26    ← Extrait l'OpCode              |
+|    switch (opcode):       ← Exécute l’instruction         |
++-----------------------------------------------------------+
+                            │
+                            ▼
++-----------------------------------------------------------+
+|                Exécution des Instructions                 |
+|  OpCode | Opération               | Registres utilisés    |
+|  -------+-------------------------+-----------------------|
+|  MOVE   | R(A) := R(B)            | A, B                  |
+|  LOADK  | R(A) := K(Bx)           | A, Bx                 |
+|  ADD    | R(A) := R(B) + R(C)     | A, B, C               |
+|  JMP    | PC += Bx                | PC                    |
+|  RETURN | Fin de l'exécution       |                      |
++-----------------------------------------------------------+
+                            │
+                            ▼
++-----------------------------------------------------------+
+|       Gestion des Sauts et Structures Conditionnelles     |
+|  - Saut conditionnel : EQ, LT, LE, GT, GE                 |
+|  - PC ajusté en fonction du test                          |
++-----------------------------------------------------------+
+                            │
+                            ▼
++-----------------------------------------------------------+
+|                 Résultat de l’Exécution                   |
++-----------------------------------------------------------+
+```
+
 ---
 
 ## 🛠️ **I. Qu’est-ce que le bytecode en Lua ?**
