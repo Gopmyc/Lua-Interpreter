@@ -1035,12 +1035,6 @@ end
 
 Dans ce code, nous avons ajouté une vérification pour la division par zéro. Lorsqu'un tel cas se produit, une erreur est levée via l'instruction `ERROR` et gérée par la fonction `handle_error`. Cela permet de capter et d'afficher l'erreur au lieu de faire planter la machine virtuelle.
 
----
-
-Bien sûr, voici la conclusion révisée, axée sur l'importance de comprendre un interpréteur pour mieux appréhender le code Lua, son utilisation et son optimisation :
-
----
-
 ### 🎯 **XIV. Conclusion**
 
 Félicitations ! À travers ce tutoriel, vous avez acquis une compréhension approfondie de l’interprétation du bytecode Lua, depuis sa transformation à partir du code source jusqu'à son exécution par la machine virtuelle. En suivant chaque étape, vous avez découvert le rôle des registres, des opcodes et des fonctions de la machine virtuelle Lua.
@@ -1062,12 +1056,6 @@ Mais au-delà de la simple compréhension technique du bytecode, l’essentiel r
 Que vous soyez un développeur Lua expérimenté ou un novice cherchant à optimiser son code, cette compréhension du bytecode est une compétence cruciale pour exploiter Lua de manière optimale. Elle vous permettra non seulement de mieux comprendre comment Lua exécute votre code, mais aussi de prendre des décisions éclairées lors de l’écriture de nouveaux programmes ou de l'optimisation de projets existants.
 
 La maîtrise de l'interprétation du bytecode est donc un levier puissant pour exploiter pleinement le potentiel de Lua dans divers projets, tout en améliorant vos capacités à optimiser et à adapter vos applications.
-
----
-
-Voici une section "Références" que tu peux ajouter à la fin de ton tutoriel. Cette section peut regrouper des liens et des ressources utiles qui ont contribué à la construction du tutoriel.
-
----
 
 ### 📚 **Références / Credits**
 
